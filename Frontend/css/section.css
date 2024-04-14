@@ -1,0 +1,407 @@
+.section{
+	display: inline-block;
+	height: auto;
+	width: 898px;
+	background-color: white;
+}
+.sectiondn{
+	margin-left: 130px;
+	display: inline-block;
+	height: auto;
+	width: 898px;
+	background-color: white;
+}
+.listnl tr{
+	width: 100%;
+}
+.sectionsp{
+	margin: 0;
+	font-size: 50px;
+	border: 1px solid rgba(191,191,191,1.00);
+	margin-left: 2px;
+	padding-top: 8px;
+	width: 858px;
+	padding-bottom: 5px;
+	text-indent: 30px;
+	background: linear-gradient(to right,#003e52,#1895b0);
+	color: white;
+	border-radius: 8px;
+}
+.hoadon {
+	display: none;
+	width: 900px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.hoadon .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.hoadon h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.hoadon table {
+    width: 900px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.hoadon th, .hoadon td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+.hoadon th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.hoadon td {
+	width: 100%;
+    background-color: #fafafa;
+}
+#luu button {
+	background-color: #4CAF50; /* Màu nền */
+	border: none; /* Không có đường viền */
+	color: white; /* Màu chữ */
+	padding: 10px 20px; /* Kích thước padding */
+	text-align: center; /* Căn giữa nội dung */
+	text-decoration: none; /* Không gạch chân */
+	display: inline-block; /* Hiển thị như một khối nội dung */
+	font-size: 16px; /* Kích thước font */
+	margin: 4px 2px; /* Khoảng cách bên trong */
+	cursor: pointer; /* Con trỏ chuột */
+	border-radius: 4px; /* Bo góc */
+  }
+
+.section-head{
+	margin: 0;
+	font-size: 20px;
+	border: 1px solid rgba(191,191,191,1.00);
+	margin-left: 2px;
+	padding-top: 8px;
+	width: 895px;
+	padding-bottom: 5px;
+	text-indent: 30px;
+	background: linear-gradient(to right,#003e52,#1895b0);
+	color: white;
+	border-radius: 8px;
+}
+.listnl table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+	/* CSS cho tiêu đề cột */
+.hide {
+	display: none;
+}
+.hidenl{
+	display: none;
+}
+.hidencc{
+	display: none;
+}
+.hidenll{
+	display: flex;
+}
+.hide {
+	margin-left: 10px;
+	display: none; 
+	padding: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hide h2 {
+	margin-bottom: 10px;
+}
+
+.hide div {
+	margin-bottom: 10px;
+}
+
+.hide input[type="text"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.hide button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hide button:hover {
+	background-color: #45a049;
+}
+.hidenll {
+	justify-content: start;
+	align-items: center;
+	padding: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hidenll h2 {
+	margin-bottom: 10px;
+}
+
+.hidenll div {
+	width: 150px;
+}
+
+.hidenll input[type="text"] {
+	width: 100%; 
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.hidenll button {
+	margin-top: 5px;
+	margin-left: 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 80px;
+	height: 35px;
+}
+
+.hidenll button:hover {
+	background-color: #45a049;
+}
+
+.my-button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.hidenl {
+	display: none; /* Ẩn form ban đầu */
+	padding: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hidenl h2 {
+	margin-bottom: 10px;
+}
+
+.hidenl div {
+	margin-bottom: 10px;
+}
+
+.hidenl input[type="text"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.hidenl button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hidenl button:hover {
+	background-color: #45a049;
+}
+.hidencc {
+	display: none; /* Ẩn form ban đầu */
+	padding: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+.hidencc h2 {
+	margin-bottom: 10px;
+}
+
+.hidencc div {
+	margin-bottom: 10px;
+}
+
+.hidencc input[type="text"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.hidencc button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hidencc button:hover {
+	background-color: #45a049;
+}
+
+.listnl th {
+		background-color: #f2f2f2;
+		color: #333;
+		font-weight: bold;
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	/* CSS cho ô dữ liệu */
+.listnl td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	/* CSS cho dòng chẵn */
+.listnl tr:nth-child(even) {
+		background-color: #f9f9f9;
+	}
+
+	/* CSS cho dòng lẻ */
+.listnl tr:nth-child(odd) {
+		background-color: #fff;
+	}
+	.hidenccs {
+		display: none;
+		padding: 20px;
+		background-color: #f0f0f0;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.hidenccs h2 {
+		margin-bottom: 10px;
+	}
+	
+	.hidenccs div {
+		margin-bottom: 10px;
+	}
+	
+	.hidenccs input[type="text"] {
+		width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+		padding: 8px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+	
+	.hidenccs button {
+		padding: 10px 20px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	.hidenccs button:hover {
+		background-color: #45a049;
+	}
+	.hidenls {
+		display: none; 
+		padding: 20px;
+		background-color: #f0f0f0;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.hidenls h2 {
+		margin-bottom: 10px;
+	}
+	
+	.hidenls div {
+		margin-bottom: 10px;
+	}
+	
+	.hidenls input[type="text"] {
+		width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+		padding: 8px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+	
+	.hidenls button {
+		padding: 10px 20px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	.hidenls button:hover {
+		background-color: #45a049;
+	}
+		
+.khung-frame{
+	margin-top: 10px;
+	margin-left: 20px;
+	float: left;
+	display: inline-block;
+	width: 894px;
+	min-width: 894px;
+}
+.wrap_main{
+	width: 1212px;
+	min-width: 1212px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+#this_top_of_iframe{
+	height: 30px;
+}

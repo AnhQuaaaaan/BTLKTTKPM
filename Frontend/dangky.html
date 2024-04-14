@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/dangnhap.css" />
+
+
+  <title>Đăng ký</title>
+
+</head>
+
+<body>
+
+<div class="khung">
+  <div class="bieumaus">
+    <div class="bieumau dangnhap">
+      <span class="tieude">Đăng ký</span>
+      <form onsubmit="dangky(event)">
+        <div class="truongnhap">
+          <input name="username" type="text" id="username" placeholder="Nhập email của bạn">
+        </div>
+        <div class="truongnhap">
+          <input name="password" type="password" id="password" class="password"
+                 placeholder="Nhập mật khẩu của bạn">
+        </div>
+        <div class="truongnhap">
+          <input name="repassword" type="password" id="repassword" class="password"
+                 placeholder="Nhập lại mật khẩu của bạn">
+        </div>
+        <div style="margin-top: 20px;color:red" id="loi"></div>
+        <div class="truongnhap button">
+          <input type="submit" value="Đăng ký">
+        </div>
+      </form>
+
+
+    <div class="dangnhap-dangky">
+                    <span class="chu">Bạn đã có tài khoản?
+                        <a href="dangnhap.html" class="chu dangnhap-link">Đăng nhập ngay bây giờ?</a>
+                    </span>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="./Javascript/dangnhap.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
