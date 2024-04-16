@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface NCCNguyenLieuRepository extends JpaRepository<NCCNguyenLieu,Integer> {
     NCCNguyenLieu findNCCNguyenLieuById(int id);
-    NCCNguyenLieu findNCCNguyenLieuByNguyenlieuIdAndNhacungcapId(int nguyenlieuid,int nhacungcapid);
 }

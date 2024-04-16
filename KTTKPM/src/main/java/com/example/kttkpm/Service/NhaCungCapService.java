@@ -6,6 +6,7 @@ import com.example.kttkpm.Entity.NCCNguyenLieu;
 import com.example.kttkpm.Entity.NguyenLieu;
 import com.example.kttkpm.Entity.NhaCungCap;
 import com.example.kttkpm.Repository.NhaCungCapRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
+
 public class NhaCungCapService {
     @Autowired
     private NhaCungCapRepository nhaCungCapRepository;

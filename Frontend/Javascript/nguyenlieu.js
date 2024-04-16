@@ -101,7 +101,7 @@ async function updateitem(event){
     const dongia=document.getElementById("dongia").value
     const soluong=document.getElementById("soluong").value
     const data = {
-        tennguyenlieu: tennguyenlieu,
+        tennguyenlieu: tennguyenlieu,   
         tennhacungcap: tennhacungcap,
         dongia: dongia,
         soluong: soluong

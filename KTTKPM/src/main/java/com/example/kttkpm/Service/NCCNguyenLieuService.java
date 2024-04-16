@@ -6,6 +6,7 @@ import com.example.kttkpm.Entity.NCCNguyenLieu;
 import com.example.kttkpm.Entity.NguyenLieu;
 import com.example.kttkpm.Entity.NhaCungCap;
 import com.example.kttkpm.Repository.NCCNguyenLieuRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class NCCNguyenLieuService {
     @Autowired
     private NCCNguyenLieuRepository nccNguyenLieuRepository;
@@ -25,8 +27,6 @@ public class NCCNguyenLieuService {
     @Autowired
     private NhaCungCapService nhaCungCapService;
     private NCCNguyenLieuDto convertToDto(NCCNguyenLieu nccNguyenLieu) {
-//        ModelMapper modelMapper=new ModelMapper();
-//        NCCNguyenLieuDto nccNguyenLieuDto=modelMapper.map(nccNguyenLieu,NCCNguyenLieuDto.class);
         NCCNguyenLieuDto dto=new NCCNguyenLieuDto();
         dto.setId(nccNguyenLieu.getId());
         dto.setTennguyenlieu(nccNguyenLieu.getNguyenlieu().getTen());
@@ -43,7 +43,7 @@ public class NCCNguyenLieuService {
                 .collect(Collectors.toList());
         return  nccNguyenLieuDtos;
     }
-    public void update(NCCNguyenLieuDto nccNguyenLieuDto,int id){
+    public void update(NCCNguyenLieuDto nccNguyenLieuDto){
         NguyenLieu nguyenLieu= nguyenLieuService.findNguyenLieuByTen(nccNguyenLieuDto.getTennguyenlieu());
         NhaCungCap nhaCungCap=nhaCungCapService.findNhaCungCapByTen(nccNguyenLieuDto.getTennhacungcap());
         if (nguyenLieu == null) {
@@ -52,8 +52,8 @@ public class NCCNguyenLieuService {
         else if (nhaCungCap == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nhà Cung Cấp Không Tồn Tại. Vui Lòng Thêm Mới");
         }
-        else{
-            NCCNguyenLieu nccNguyenLieu= nccNguyenLieuRepository.findNCCNguyenLieuById(id);
+        else{ 
+            NCCNguyenLieu nccNguyenLieu= nccNguyenLieuRepository.findNCCNguyenLieuById(nccNguyenLieuDto.getId());
             nccNguyenLieu.setDongia(nccNguyenLieuDto.getDongia());
             nccNguyenLieu.setSoluong(nccNguyenLieuDto.getSoluong());
             nccNguyenLieu.setNguyenlieu(nguyenLieu);
@@ -62,8 +62,8 @@ public class NCCNguyenLieuService {
         }
 
     }
-
     public void delete(int id){
-        nccNguyenLieuRepository.delete(nccNguyenLieuRepository.findNCCNguyenLieuById(id));
+        System.out.println(id);
+        nccNguyenLieuRepository.deleteById(id);
     }
 }

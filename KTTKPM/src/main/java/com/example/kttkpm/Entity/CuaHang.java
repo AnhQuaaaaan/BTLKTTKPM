@@ -34,7 +34,6 @@ public class CuaHang implements Serializable {
 
     @Column(name = "mota")
     private String mota;
-
     @OneToMany(mappedBy = "cuahang", cascade = CascadeType.ALL,orphanRemoval = true)
     @JsonManagedReference
     private List<NhapHang> cuahangs =new ArrayList<>();

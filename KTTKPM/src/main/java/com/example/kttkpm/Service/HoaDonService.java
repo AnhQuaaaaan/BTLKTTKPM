@@ -8,11 +8,14 @@ import com.example.kttkpm.Entity.NhapHang;
 import com.example.kttkpm.Repository.HoaDonRepository;
 import com.example.kttkpm.Repository.NguoiDungRepository;
 import com.example.kttkpm.Repository.NhapHangRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
+
 public class HoaDonService {
     @Autowired
     private HoaDonRepository hoaDonRepository;

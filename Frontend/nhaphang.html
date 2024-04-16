@@ -84,26 +84,11 @@
 					<!--Thanh tiêu đề-->
 					<p class="section-head">Nguyên Liệu</p>
 					<!--End Thanh tiêu đề-->
-					<form id="hidenccs" class="hidenccs">
-						<!-- Các trường nhập thông tin sửa -->
-						<div id="tennccnl">Tên nhà cung cấp</div>
-						<input type="text" id="tennhacungcapsearch">
-						
-						<!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
-						<button type="submit" onclick="themnccnll(event)" style="margin-top: 10px;">Thêm mới</button>
-					</form>
-					<form id="hidenls" class="hidenls">
-						<!-- Các trường nhập thông tin sửa -->
-						<div id="tennccnl">Tên nguyên liệu</div>
-						<input type="text" id="tennguyenlieusearch">
-						<!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
-						<button type="submit" onclick="themnlnll(event)" style="margin-top: 10px;">Thêm mới</button>
-					</form>
 					<!--Hộp 1-->
 					<div id="listnl" class="listnl">
 						<table>
 							<div style="margin-top: 5px;color:red" id="ngoaile"></div>
-							<div class="hide" id="hide">
+							<div class="hidenh" id="hide">
 								<h2>Nhập thông tin</h2>
 								<form id="editForm">
 									<!-- Các trường nhập thông tin sửa -->
@@ -112,7 +97,7 @@
 
 									<div>Số lượng: <input type="text" id="soluong"></div>
 
-									<div>Ngày nhập: <input type="text" id="ngaynhap"></div>
+									<div>Ngày nhập: <input type="date" id="ngaynhap"></div>
 
 									<div>Mô tả: <input type="text" id="mota"></div>
 
@@ -120,73 +105,6 @@
 									<button type="submit" onclick="nhaphang(event)">Lưu</button>
 								</form>
 							</div>
-							<div class="hidencc" id="themncc">
-								<h2>Thêm nhà cung cấp</h2>
-								<form id="ncc">
-									<div>Tên nhà cung cấp:
-										<input type="text" id="tenncc" ></div>
-									<div>Địa chỉ:
-										<input type="text" id="diachincc" ></div>
-									<div>Email:
-										<input type="text" id="emailncc" ></div>
-									<div>SĐT:
-										<input type="text" id="sdtncc" ></div>
-									<div >Mô tả: <input type="text" id="motancc" ></div>
-
-									<button type="submit" onclick="addncc(event)">Lưu</button>
-								</form>
-							</div>
-							<div class="hidenl" id="themnl">
-								<h2>Thêm nguyên liệu</h2>
-								<form id="them">
-									<div>Tên nguyên liệu:<input type="text" id="tennl" ></div>
-
-									<div >Mô tả: <input type="text" id="motanl" ></div>
-
-									<button type="submit" onclick="addnl(event)">Lưu</button>
-								</form>
-							</div>
-						</table>
-					</div>
-					<div class="hoadon" id="hoadon">
-						<table>
-							<tr>
-								<th>ID</th>
-								<td id="id"></td>
-							</tr>
-							<tr>
-								<th>Ngày Xuất Đơn</th>
-								<td id="ngayxuatdon"></td>
-							</tr>
-							<tr>
-								<th>Cửa Hàng</th>
-								<td id="cuahang"></td>
-							</tr>
-							<tr>
-								<th>Nhân Viên</th>
-								<td id="nguoidung"></td>
-							</tr>
-							<tr>
-								<th>Nguyên Liệu</th>
-								<td id="nguyenlieu"></td>
-							</tr>
-							<tr>
-								<th>Nhà Cung Cấp</th>
-								<td id="nhacungcap"></td>
-							</tr>
-							<tr>
-								<th>Tổng Tiền</th>
-								<td id="tongtien"></td>
-							</tr>
-							<tr>
-								<th>Mô Tả</th>
-								<td id="motahd"></td>
-							</tr>
-							<tr>
-								<td id="luu"><button id="luuhoadon">Lưu</button></td>
-								<td></td>
-							</tr>
-
 						</table>
 					</div>
 				</div>
@@ -212,7 +130,7 @@
 	<!-- <script type="text/javascript" src="/Javascript/nguyenlieu.js" charset="utf-8"></script> -->
 	<script type="text/javascript" src="/Javascript/chung.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/Javascript/dangnhap.js" charset="utf-8"></script>
-	<script type="text/javascript" src="/Javascript/nhapnguyenlieu.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/Javascript/nhaphang.js" charset="utf-8"></script>
 
 </body>
 

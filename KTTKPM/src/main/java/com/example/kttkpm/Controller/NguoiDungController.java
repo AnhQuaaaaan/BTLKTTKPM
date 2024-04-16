@@ -18,8 +18,8 @@ public class NguoiDungController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody NguoiDungDto nguoiDungDto){
-        if (nguoiDungService.checkUser(nguoiDungDto.getUsername(),nguoiDungDto.getPassword())!=null){
-            return ResponseEntity.ok(nguoiDungService.checkUser(nguoiDungDto.getUsername(),nguoiDungDto.getPassword()));
+        if (nguoiDungService.checkUser(nguoiDungDto)!=null){
+            return ResponseEntity.ok(nguoiDungService.checkUser(nguoiDungDto));
         }
         else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Tên đăng nhập hoặc mật khẩu không đúng");
@@ -27,7 +27,7 @@ public class NguoiDungController {
     }
     @PostMapping("/register")
     public ResponseEntity<?> Register(@RequestBody NguoiDungDto nguoiDungDto){
-        if (nguoiDungService.checkUser(nguoiDungDto.getUsername(), nguoiDungDto.getPassword())!=null){
+        if (nguoiDungService.checkUser(nguoiDungDto)!=null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Tài khoản đã tồn tại");
         }
         else{

@@ -35,7 +35,8 @@ public class NCCNguyenLieuController {
     @PutMapping( "/update/{id}")
     public ResponseEntity<?> updateProduct(@RequestBody NCCNguyenLieuDto nccnguyenLieuDto,@PathVariable int id){
         try{
-            nccNguyenLieuService.update(nccnguyenLieuDto,id);
+            nccnguyenLieuDto.setId(id);
+            nccNguyenLieuService.update(nccnguyenLieuDto);
             return ResponseEntity.ok().build();
         }
         catch (ResponseStatusException e){

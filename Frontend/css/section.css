@@ -28,7 +28,6 @@
 	border-radius: 8px;
 }
 .hoadon {
-	display: none;
 	width: 900px;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -139,6 +138,13 @@
 	border-radius: 4px;
 	box-sizing: border-box;
 }
+.hide input[type="date"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
 
 .hide button {
 	padding: 10px 20px;
@@ -152,6 +158,52 @@
 .hide button:hover {
 	background-color: #45a049;
 }
+.hidenh {
+	margin-left: 10px;
+	padding: 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hidenh h2 {
+	margin-bottom: 10px;
+}
+
+.hidenh div {
+	margin-bottom: 10px;
+}
+
+.hidenh input[type="text"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.hidenh input[type="date"] {
+	width: 100%; /* Input chiếm toàn bộ chiều rộng của div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.hidenh button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hidenh button:hover {
+	background-color: #45a049;
+}
+
 .hidenll {
 	justify-content: start;
 	align-items: center;
@@ -350,7 +402,6 @@
 		background-color: #45a049;
 	}
 	.hidenls {
-		display: none; 
 		padding: 20px;
 		background-color: #f0f0f0;
 		border: 1px solid #ccc;

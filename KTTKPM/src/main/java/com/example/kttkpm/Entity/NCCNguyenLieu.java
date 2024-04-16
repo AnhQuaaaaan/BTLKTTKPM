@@ -24,18 +24,18 @@ public class NCCNguyenLieu implements Serializable {
     @Column(name = "soluong",nullable = false)
     private long soluong;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "nguyenlieu_id")
     private NguyenLieu nguyenlieu;
 
     @Column(name = "dongia",nullable = false)
     private long dongia;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "nhacungcap_id")
     private NhaCungCap nhacungcap;
 
-    @OneToMany(mappedBy = "nccnguyenlieu", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "nccnguyenlieu", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<NhapHang> nccnguyenlieus =new ArrayList<>();
 }

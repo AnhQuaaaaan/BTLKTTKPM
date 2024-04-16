@@ -75,6 +75,7 @@ async function dangxuat(){
     localStorage.removeItem("token");
     localStorage.removeItem("idncc");
     localStorage.removeItem("idnl");
+    localStorage.removeItem("nhaphangData");
     window.location.href = "index.html";
 }
 window.onload =init();
