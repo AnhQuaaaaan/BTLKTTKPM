@@ -23,4 +23,9 @@ public class NguyenLieuController {
     public ResponseEntity<NguyenLieuDto> getNl(@PathVariable int id){
         return ResponseEntity.ok(nguyenLieuService.findNguyenLieuById(id));
     }
+    @PostMapping("/add")
+    ResponseEntity<Void> addNl(@RequestBody NguyenLieuDto nguyenLieuDto){
+        nguyenLieuService.save(nguyenLieuDto);
+        return ResponseEntity.ok().build();
+    }
 }

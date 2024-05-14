@@ -24,4 +24,9 @@ public class NhaCungCapController {
     public ResponseEntity<NhaCungCapDto> getNCCById(@PathVariable int id){
         return ResponseEntity.ok(nhaCungCapService.findNhaCungCapByID(id));
     }
+    @PostMapping("/add")
+    ResponseEntity<Void> addNcc(@RequestBody NhaCungCapDto nhaCungCapDto){
+        nhaCungCapService.save(nhaCungCapDto);
+        return ResponseEntity.ok().build();
+    }
 }

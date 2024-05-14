@@ -21,10 +21,16 @@ async function getHd() {
                 <td>${item.tennv}</td>
                 <td>${item.tenncc}</td>
                 <td>${item.tongtien}</td>
+                <td><Button type="button" class="buttonnl">Xem</Button></td>
             `;
             tbody.appendChild(tr);
+            tr.querySelector('button[type="button"]').addEventListener('click', () => xemhd(item.id));
         });
     } catch (err) {
         console.error(err);
     }
+}
+async function xemhd(id){
+    localStorage.setItem('idxhd', id);
+    window.location.href="xemhoadon.html"
 }

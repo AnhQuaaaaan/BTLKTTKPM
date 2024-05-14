@@ -20,6 +20,11 @@ public class NguyenLieuService {
         NguyenLieuDto nguyenLieuDto=modelMapper.map(nguyenLieu,NguyenLieuDto.class);
         return nguyenLieuDto;
     }
+    public void save(NguyenLieuDto nguyenLieuDto){
+        ModelMapper modelMapper=new ModelMapper();
+        NguyenLieu nguyenLieu=modelMapper.map(nguyenLieuDto,NguyenLieu.class);
+        nguyenLieuRepository.save(nguyenLieu);
+    }
 
     public List<NguyenLieuDto> getAllNguyenLieu(){
         List<NguyenLieu> nguyenLieus=nguyenLieuRepository.findAll();

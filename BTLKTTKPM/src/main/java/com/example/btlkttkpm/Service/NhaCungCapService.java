@@ -30,4 +30,9 @@ public class NhaCungCapService {
     public NhaCungCapDto findNhaCungCapByID(int id){
         return convertToDto(nhaCungCapRepository.findNhaCungCapById(id));
     }
+    public void save(NhaCungCapDto nhaCungCapDto){
+        ModelMapper modelMapper=new ModelMapper();
+        NhaCungCap nhaCungCap=modelMapper.map(nhaCungCapDto,NhaCungCap.class);
+        nhaCungCapRepository.save(nhaCungCap);
+    }
 }

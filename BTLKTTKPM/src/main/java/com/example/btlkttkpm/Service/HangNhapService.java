@@ -54,4 +54,19 @@ public class HangNhapService {
                 .collect(Collectors.toList());
         return hangNhapDtos;
     }
+    public HangNhapDto getHNbyNguyenLieuId(int idnl ,int idhdn){
+        HangNhap hangNhap=hangNhapRepository.findHangNhapByNguyenlieuIdAndHoadonnhapId(idnl,idhdn);
+        if(hangNhap!=null){
+            return convertToDto(hangNhap);
+        }
+        else{
+            return null;
+        }
+    }
+    public void update(HangNhapDto hangNhapDto){
+        HangNhap hangNhap=hangNhapRepository.findHangNhapById(hangNhapDto.getId());
+        hangNhap.setGia(hangNhapDto.getGia());
+        hangNhap.setSoluong(hangNhapDto.getSoluong());
+        hangNhapRepository.save(hangNhap);
+    }
 }

@@ -46,18 +46,18 @@ async function searchNl(searchnl) {
     const filteredItems = filteredData.filter(item => {
         return item.ten.toLowerCase().includes(searchnl);
     });
-    tbody.innerHTML=''
+    tbody.innerHTML = ''
     filteredItems.forEach(item => {
-        
+
         const tr = document.createElement('tr');
-                tr.innerHTML = `
+        tr.innerHTML = `
                 <td>${item.id}</td>
                 <td>${item.ten}</td>
                 <td>${item.mota}</td>
                 <td><Button type="button" class="buttonnl">Chọn</Button></td>
             `;
-                tbody.appendChild(tr);
-                tr.querySelector('button[type="button"]').addEventListener('click', () => selectItem(item.id));
+        tbody.appendChild(tr);
+        tr.querySelector('button[type="button"]').addEventListener('click', () => selectItem(item.id));
     });
 }
 async function themnlnll(event) {
@@ -66,8 +66,8 @@ async function themnlnll(event) {
 }
 async function addnl(event) {
     event.preventDefault()
-    const ten = document.getElementById("tennl").value
-    const mota = document.getElementById("motanl").value
+    const ten = document.getElementById("tennl1").value
+    const mota = document.getElementById("motanl1").value
     fetch(`http://localhost:8080/api/nguyenlieu/add`, {
         method: "POST",
         headers: {
@@ -128,50 +128,136 @@ async function selectednl() {
     const motanl = document.getElementById("motanl")
     const nhap = document.getElementById("nhap")
     const idnl = localStorage.getItem('idnl');
-    fetch(`http://localhost:8080/api/nguyenlieu/${idnl}`, {
-        headers: {
-            "Content-Type": "application/json"
-        },
-    })
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            tennl.innerText = data.ten;
-            motanl.innerText = data.mota;
-            nhap.style.display = "flex"
-        })
-        .catch(err => {
-            console.log(err)
-        })
+    const idhdn = localStorage.getItem('idhdn');
+    const dongia = document.getElementById("dongianl")
+    const soluong = document.getElementById("soluongnl")
+    const loi = document.getElementById("loi")
+    try {
+        const response = await fetch(`http://localhost:8080/api/hangnhap/${idnl}/${idhdn}`, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+
+        if (!response.ok) {
+            try {
+                const nguyenlieuResponse = await fetch(`http://localhost:8080/api/nguyenlieu/${idnl}`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                if (!nguyenlieuResponse.ok) {
+                    throw new Error('Lỗi khi lấy dữ liệu từ API nguyên liệu');
+                }
+
+                const data = await nguyenlieuResponse.json();
+
+                tennl.innerText = data.ten;
+                motanl.innerText = data.mota;
+                nhap.style.display = "flex";
+            } catch (error) {
+                console.error('Lỗi khi xử lý response từ API nguyên liệu:', error);
+            }
+        }
+        else {
+            const responseData = await response.json();
+            try {
+                const nguyenlieuResponse = await fetch(`http://localhost:8080/api/nguyenlieu/${idnl}`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                if (!nguyenlieuResponse.ok) {
+                    throw new Error('Lỗi khi lấy dữ liệu từ API nguyên liệu');
+                }
+
+                const data = await nguyenlieuResponse.json();
+
+                tennl.innerText = data.ten;
+                motanl.innerText = data.mota;
+                dongia.value = responseData.gia;
+                soluong.value = responseData.soluong;
+                loi.innerText = "Nguyên liệu này đã được chọn vui lòng sửa thông tin"
+                nhap.style.display = "flex";
+            } catch (error) {
+                console.error('Lỗi khi xử lý response từ API nguyên liệu:', error);
+            }
+        }
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+
 }
-async function xacnhannl(event) {
+async function xacnhannl() {
+    event.preventDefault();
     const idnl = localStorage.getItem('idnl');
     const idhdn = localStorage.getItem('idhdn');
     const dongia = document.getElementById("dongianl").value
     const soluong = document.getElementById("soluongnl").value
-    const data = {
-        hoadonnhap_id: idhdn,
-        nguyenlieu_id: idnl,
-        gia: dongia,
-        soluong: soluong,
-    };
-    await fetch(`http://localhost:8080/api/hangnhap/add`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            window.location.reload = "chonnguyenlieu.html"
-        })
-        .catch(err => {
-            console.log(err)
-        })
+    
+    try {
+        const response = await fetch(`http://localhost:8080/api/hangnhap/${idnl}/${idhdn}`, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+
+        if (!response.ok) {
+            const data = {
+                hoadonnhap_id: idhdn,
+                nguyenlieu_id: idnl,
+                gia: dongia,
+                soluong: soluong,
+            };
+            try {
+                const resp =await fetch(`http://localhost:8080/api/hangnhap/add`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                if (!resp.ok) {
+                    throw new Error('Lỗi gì rồi');
+                }
+                window.location.href="chonnguyenlieu.html"
+                
+            } catch (error) {
+                console.error('Lỗi khi xử lý response từ API nguyên liệu:', error);
+            }
+        }
+        else {
+            const responseData = await response.json();
+            const data = {
+                id:responseData.id,
+                hoadonnhap_id: idhdn,
+                nguyenlieu_id: idnl,
+                gia: dongia,
+                soluong: soluong,
+            };
+            try {
+                const resp =await fetch(`http://localhost:8080/api/hangnhap/update`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                if (!resp.ok) {
+                    throw new Error('Lỗi gì rồi');
+                }
+                window.location.href="chonnguyenlieu.html"
+                
+            } catch (error) {
+                console.error('Lỗi khi xử lý response từ API nguyên liệu:', error);
+            }
+        }
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+
 }
 async function loadhangnhap(event) {
     const idhdn = localStorage.getItem('idhdn');
@@ -187,9 +273,9 @@ async function loadhangnhap(event) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const hangNhapList = await response.json(); 
+        const hangNhapList = await response.json();
         const container = document.querySelector('.listnnl');
-        container.innerHTML = '';  
+        container.innerHTML = '';
 
         if (hangNhapList.length === 0) {
         } else {
@@ -219,7 +305,7 @@ async function loadhangnhap(event) {
         document.querySelector('.listnnl').innerHTML = '<p>Đã xảy ra lỗi khi tải dữ liệu.</p>';
     }
 }
-function nhaphang(){
+function nhaphang() {
     event.preventDefault()
-    window.location.href="hoadon.html"
+    window.location.href = "hoadon.html"
 }

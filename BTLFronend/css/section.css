@@ -23,6 +23,7 @@
 	display: none;
 }
 
+
 .input-group {
     display: flex;
     align-items: center; /* Căn giữa các phần tử theo chiều dọc */
@@ -55,7 +56,26 @@ button:hover {
     white-space: nowrap; /* Đảm bảo label không bị wrap */
     margin-right: 10px; /* Khoảng cách giữa label và input or span */
 }
+.input-groups input[type="text"] {
+	border-radius: 20px; /* Thay đổi giá trị này để điều chỉnh độ bo tròn của góc */
+	padding: 10px; /* Tạo thêm khoảng cách bên trong để nhìn đẹp hơn */
+	border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ để làm nổi bật */
+}
 
+button#xacnhan {
+	border-radius: 20px; /* Tương tự áp dụng cho nút bấm nếu bạn muốn nó cũng có góc bo tròn */
+	padding: 10px 20px; /* Tạo thêm khoảng cách bên trong cho nút bấm */
+	border: none; /* Bỏ đường viền cho nút bấm */
+	background-color: #007bff; /* Màu nền cho nút bấm */
+	color: #fff; /* Màu chữ trắng */
+	cursor: pointer; /* Thay đổi con trỏ chuột thành hình bàn tay khi hover */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ */
+}
+
+button#xacnhan:hover {
+	background-color: #0056b3; /* Đổi màu nền khi hover */
+}
 .input-group label {
 	font-size: 20px;
     white-space: nowrap; /* Đảm bảo label không bị wrap */
