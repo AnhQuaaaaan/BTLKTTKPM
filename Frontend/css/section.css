@@ -11,6 +11,190 @@
 	width: 898px;
 	background-color: white;
 }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Khoảng cách đều nhau giữa các input group */
+    gap: 10px; /* Khoảng cách dọc và ngang giữa các phần tử */
+}
+.nhap{
+	justify-content: space-between;
+	width: 100%;
+	display: none;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-basis: calc(50% - 10px); /* Chiếm gần nửa chiều rộng của container trừ đi khoảng cách */
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Larger font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth background color and transform transition */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker shade of green */
+    transform: translateY(-2px); /* Slightly raise the button */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+.input-groups {
+	
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-basis: calc(50% - 10px); /* Chiếm gần nửa chiều rộng của container trừ đi khoảng cách */
+}
+.input-groups label,button {
+	font-size: 20px;
+    white-space: nowrap; /* Đảm bảo label không bị wrap */
+    margin-right: 10px; /* Khoảng cách giữa label và input or span */
+}
+.input-groups input[type="text"] {
+	border-radius: 20px; /* Thay đổi giá trị này để điều chỉnh độ bo tròn của góc */
+	padding: 10px; /* Tạo thêm khoảng cách bên trong để nhìn đẹp hơn */
+	border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ để làm nổi bật */
+}
+
+button#xacnhan {
+	border-radius: 20px; /* Tương tự áp dụng cho nút bấm nếu bạn muốn nó cũng có góc bo tròn */
+	padding: 10px 20px; /* Tạo thêm khoảng cách bên trong cho nút bấm */
+	border: none; /* Bỏ đường viền cho nút bấm */
+	background-color: #007bff; /* Màu nền cho nút bấm */
+	color: #fff; /* Màu chữ trắng */
+	cursor: pointer; /* Thay đổi con trỏ chuột thành hình bàn tay khi hover */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ */
+}
+
+button#xacnhan:hover {
+	background-color: #0056b3; /* Đổi màu nền khi hover */
+}
+.input-group label {
+	font-size: 20px;
+    white-space: nowrap; /* Đảm bảo label không bị wrap */
+    margin-right: 10px; /* Khoảng cách giữa label và input or span */
+}
+
+/* Styling the table */
+.listnnl table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* Table headers */
+.listnnl th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table cells */
+.listnnl td {
+	font-size: 20px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eaeaea;
+    color: #333;
+}
+.invoice-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.invoice-form h2 {
+    text-align: center;
+}
+
+.form-row {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-row label {
+    width: 150px;
+    font-weight: bold;
+}
+
+.form-row span {
+    flex: 1;
+}
+
+.button-row {
+    text-align: right;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+.listnnl tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alternating row colors */
+.listnnl tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .listnnl table {
+        font-size: 14px;
+    }
+}
+
+.buttonnl{
+	background-color: #4CAF50; 
+    color: white;           
+    border: none;           
+    padding: 10px 20px;     
+    text-align: center;      
+    text-decoration: none;   
+    display: inline-block;  
+    font-size: 16px;         
+    margin: 4px 2px;        
+    transition: 0.3s;       
+    cursor: pointer;         
+    border-radius: 5px;  
+}
+.buttonnl:hover {
+    background-color: #3e8e41; /* Darker shade of green on hover */
+}
+input, span {
+	font-size: 20px;
+    width: 100%; /* Đảm bảo input và span chiếm toàn bộ không gian còn lại */
+    box-sizing: border-box; /* box-sizing để padding và border không làm thay đổi width */
+}
 .listnl tr{
 	width: 100%;
 }

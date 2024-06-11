@@ -91,22 +91,98 @@
 						<!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
 						<button type="submit" onclick="themnlnll(event)" style="margin-top: 10px;">Thêm mới</button>
 					</form>
-					<!--Hộp 1-->
 					<div id="listnl" class="listnl">
 						<table>
 							<div style="margin-top: 5px;color:red" id="ngoaile"></div>
-							<div class="hidenl" id="themnl">
-								<h2>Thêm nguyên liệu</h2>
-								<form id="them">
-									<div>Tên nguyên liệu:<input type="text" id="tennl" ></div>
+							<div class="hidenh" id="hide">
+								<h2 style="font-size: 40px;margin-bottom: 50px; margin-left: 300px;">Nhập hàng</h2>
+								<form id="editForm">
+									<!-- Các trường nhập thông tin sửa -->
+									<div class="container">
+										<div class="input-group">
+											<label for="tenncc">Tên nhà cung cấp:</label>
+											<span id="tenncc"></span>
+										</div>
 
-									<div >Mô tả: <input type="text" id="motanl" ></div>
+										<div class="input-group">
+											<label for="diachincc">Địa chỉ:</label>
+											<span id="diachincc"></span>
+										</div>
 
-									<button type="submit" onclick="addnl(event)">Lưu</button>
+										<div class="input-group">
+											<label for="emailncc">Email:</label>
+											<span id="emailncc"></span>
+										</div>
+
+										<div style="margin-left: 10px;" class="input-group">
+											<label for="sdtncc">Sđt:</label>
+											<span id="sdtncc"></span>
+										</div>
+										<div class="listnguyenlieu" id="listnguyenlieu">
+											
+										</div>
+										<div class="listnnl"></div>
+										<div style="color:red" id="loi"></div>
+										<div class="nhap" id="nhap">
+											<div class="input-groups">
+												<label for="emailncc">Tên nguyên liệu:</label>
+												<span id="tennl"></span>
+											</div>
+	
+											<div  class="input-groups" style="margin-left: 20px;">
+												<label for="sdtncc">Mô tả:</label>
+												<span id="motanl"></span>
+											</div>
+											<div class="input-groups">
+												<label>Đơn giá</label>
+												<input type="text" id="dongianl">
+											</div>
+
+											<div class="input-groups" style="margin-left: 10px;">
+												<label>Số lượng</label>
+												<input type="text" id="soluongnl">
+											</div>
+
+											<button style="margin-left: 10px;height: 40px;" type="submit"
+												id="xacnhan" onclick="xacnhannl()">OK</button>
+										</div>
+									</div>
+
+									<!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
+									<button style="margin-left: 700px;" type="submit" onclick="nhaphang()">Nhập
+										Hàng</button>
 								</form>
 							</div>
 						</table>
 					</div>
+					<!--Hộp 1-->
+					<div id="listnl" class="listnl">
+						<table class="table1">
+							<thead>
+								<tr class="table-pass">
+									<th></th>
+									<th>Tên</th>
+									<th>Mô tả </th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+							<div style="margin-top: 5px;color:red" id="ngoaile"></div>
+							<div class="hidenl" id="themnl">
+								<h2>Thêm nguyên liệu</h2>
+								<form id="them">
+									<div>Tên nguyên liệu:<input type="text" id="tennl1"></div>
+
+									<div>Mô tả: <input type="text" id="motanl1"></div>
+
+									<button type="submit" onclick="addnl(event)">Lưu</button>
+								</form>
+							</div>
+
+						</table>
+					</div>
+
 				</div>
 				<!--end khung chứa sản phẩm-->
 			</div>

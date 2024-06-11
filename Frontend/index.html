@@ -1,5 +1,5 @@
 <!doctype html>
-<html >
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -61,17 +61,17 @@
 				<ul>
 					<li class="title">Danh Mục </li>
 					<li>
-						<button  onclick="reloadAndFetchData()">
+						<button onclick="reloadAndFetchData()">
 							Danh sách nguyên liệu
 						</button>
 					</li>
 					<li>
-						<button  onclick="loadnhapnguyenlieu()" >
+						<button onclick="loadnhapnguyenlieu()">
 							Nhập nguyên liệu
 						</button>
 					</li>
 					<li>
-						<button onclick="" >
+						<button onclick="">
 							Thông kê nhà cung cấp
 						</button>
 					</li>
@@ -85,69 +85,26 @@
 					<p class="section-head">Nguyên Liệu</p>
 					<!--End Thanh tiêu đề-->
 					<form id="editForm" class="hidenll">
-                        <!-- Các trường nhập thông tin sửa -->
-                        <div>Tên nguyên liệu:</div>
-                        <input type="text" id="tennguyenlieusearch" name="tennguyenlieu">
-                        <!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
-                    </form>
+						<!-- Các trường nhập thông tin sửa -->
+						<div>Tên nguyên liệu:</div>
+						<input type="text" id="tennguyenlieusearch" name="tennguyenlieu">
+						<!-- Thêm các trường khác tương tự cho các thông tin khác cần sửa -->
+					</form>
 					<!--Hộp 1-->
 					<div id="listnl" class="listnl">
 						<table>
-							<tr>
-								<th>ID</th>
-								<th>Nguyên liệu</th>
-								<th>Nhà cung cấp</th>
-								<th>Đơn giá</th>
-								<th>Số lượng</th>
-								<th></th>
-								<th></th>
-							</tr>
-							<div style="margin-top: 5px;color:red" id="ngoaile"></div>
-							<div class="hide" id="hide">
-								<h2>Sửa thông tin</h2>
-								<form id="editForm">
-									<!-- Các trường nhập thông tin sửa -->
-									<div >ID:
-										<input type="text" id="id" name="id" readonly></div>
-									<div>Tên nguyên liệu:
-										<input type="text" id="tennguyenlieu" name="tennguyenlieu"></div>
-
-									<div >Nhà Cung Cấp: <input type="text" id="tennhacungcap" name="tennhacungcap"></div>
-
-									<div >Đơn Giá: <input type="text" id="dongia" name="dongia"></div>
-
-									<div >Số lượng: <input type="text" id="soluong" name="soluong"></div>
-
-									<!-- Thêm các trường khác tương tự cho xcác thông tin khác cần sửa -->
-									<button type="submit" onclick="updateitem(event)">Lưu</button>
-								</form>
-							</div>
-							<div class="hidenl" id="themnl">
-								<h2>Thêm nguyên liệu</h2>
-								<form id="them">
-									<div>Tên nguyên liệu:<input type="text" id="tennl" ></div>
-
-									<div >Mô tả: <input type="text" id="motanl" ></div>
-
-									<button type="submit" onclick="addnl(event)">Lưu</button>
-								</form>
-							</div>
-							<div class="hidencc" id="themncc">
-								<h2>Thêm nhà cung cấp</h2>
-								<form id="ncc">
-									<div>Tên nhà cung cấp:
-										<input type="text" id="tenncc" ></div>
-									<div>Địa chỉ:
-										<input type="text" id="diachincc" ></div>
-									<div>Email:
-										<input type="text" id="emailncc" ></div>
-									<div>SĐT:
-										<input type="text" id="sdtncc" ></div>
-									<div >Mô tả: <input type="text" id="motancc" ></div>
-
-									<button type="submit" onclick="addncc(event)">Lưu</button>
-								</form>
-							</div>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Ngày xuất đơn</th>
+									<th>Nhân viên</th>
+									<th>Nhà cung cấp</th>
+									<th>Tổng tiền</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
 						</table>
 					</div>
 				</div>

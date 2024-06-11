@@ -82,50 +82,57 @@
 				<!--Phần section 1-->
 				<div class="section">
 					<!--Thanh tiêu đề-->
-					<p class="section-head">Nguyên Liệu</p>
-					<!--End Thanh tiêu đề-->
-					<!--Hộp 1-->
-					<div class="hoadon" id="hoadon">
-						<table>
-							<tr>
-								<th>ID</th>
-								<td id="id"></td>
-							</tr>
-							<tr>
-								<th>Ngày Xuất Đơn</th>
-								<td id="ngayxuatdon"></td>
-							</tr>
-							<tr>
-								<th>Cửa Hàng</th>
-								<td id="cuahang"></td>
-							</tr>
-							<tr>
-								<th>Nhân Viên</th>
-								<td id="nguoidung"></td>
-							</tr>
-							<tr>
-								<th>Nguyên Liệu</th>
-								<td id="nguyenlieu"></td>
-							</tr>
-							<tr>
-								<th>Nhà Cung Cấp</th>
-								<td id="nhacungcap"></td>
-							</tr>
-							<tr>
-								<th>Tổng Tiền</th>
-								<td id="tongtien"></td>
-							</tr>
-							<tr>
-								<th>Mô Tả</th>
-								<td id="motahd"></td>
-							</tr>
-							<tr>
-								<td id="luu"><button onclick="luuhd(event)"id="luuhoadon">Lưu</button></td>
-								<td></td>
-							</tr>
-
+					<div class="invoice-form">
+						<h2>Hóa Đơn</h2>
+						<div class="form-row">
+							<label>ID:</label>
+							<span id="idhd"></span>
+						</div>
+						<div class="form-row">
+							<label>Ngày Xuất Đơn:</label>
+							<span id="nxd"></span>
+						</div>
+						<div class="form-row">
+							<label>Nhân Viên:</label>
+							<span id="tennv"></span>
+						</div>
+						<div class="form-row">
+							<label>Nhà Cung Cấp:</label>
+							<span id="tenncc"></span>
+						</div>
+						<div class="form-row">
+							<label>Địa Chỉ:</label>
+							<span id="diachincc"></span>
+						</div>
+						<div class="form-row">
+							<label>Email</label>
+							<span id="emailncc"></span>
+						</div>
+						<div class="form-row">
+							<label>Số Điện Thoại:</label>
+							<span id="sdtncc"></span>
+						</div>
+						<!-- Bảng Nguyên Liệu -->
+						<table id="bangnl" class="table">
+							<thead>
+								<tr>
+									<th>Nguyên Liệu</th>
+									<th>Đơn Giá</th>
+									<th>Số Lượng</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
 						</table>
+						<div class="form-row" style="margin-top: 10px;">
+							<label>Tổng Tiền:</label>
+							<span id="tongtien"></span>
+						</div>
+						<div class="form-row button-row">
+							<button type="button" id="luuhoadon" onclick="luuhdn()">Lưu Hóa Đơn</button>
+						</div>
 					</div>
+					
 				</div>
 				<!--end khung chứa sản phẩm-->
 			</div>
